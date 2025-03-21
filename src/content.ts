@@ -8,7 +8,6 @@ export function contentScript() {
         request: Request
     ) {
         if (request === "eject") {
-          console.log('Disabling');
             chrome.runtime.onMessage.removeListener(handleMessage);
             chrome.runtime.onMessage.removeListener(appendTextIfChanged);
         }
@@ -20,11 +19,8 @@ export function contentScript() {
     {
       if (message.type === "clipboardContent") {
         const text = message.text;
-        console.log("Clipboard content received:", text);
-
         const textIsTheSame = text !== "" &&
           text !== previousText;
-          console.log('text is the same:' + textIsTheSame)
         // Now inject it into a page if needed
         if (
             textIsTheSame
