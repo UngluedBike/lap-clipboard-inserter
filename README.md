@@ -1,6 +1,6 @@
 # Lap Clipboard Inserter
 
-A browser extension whose purpose is to repetitively insert the system clipboard's content into a page.
+A browser extension whose purpose is to repetitively insert the system clipboard's content into a page. This fork works with chrome's offscreen api to allow insertion even when 
 
 ## Demonstration
 
@@ -30,13 +30,13 @@ This extension has the following differences from the [original Clipboard Insert
 
 ### Firefox
 
-You can download it here: [Firefox Browser ADD-ONS](https://addons.mozilla.org/en-US/firefox/addon/lap-clipboard-inserter/)
+~~You can download it here: [Firefox Browser ADD-ONS](https://addons.mozilla.org/en-US/firefox/addon/lap-clipboard-inserter/)~~
 
-Note: this version uses Manifest V2 because Firefox doesn't support Manifest V3 yet. The code can be found under the `manifest-v2` branch.
+~~Note: this version uses Manifest V2 because Firefox doesn't support Manifest V3 yet. The code can be found under the `manifest-v2` branch.~~
 
 ### Chrome
 
-I am currently waiting until this [feature](https://bugs.chromium.org/p/chromium/issues/detail?id=1339382) gets stabilized to push to the Chrome Web Store.
+~~I am currently waiting until this [feature](https://bugs.chromium.org/p/chromium/issues/detail?id=1339382) gets stabilized to push to the Chrome Web Store.~~ Extension has been updated, but I have not looked into pushing it to the web store yet.
 
 ## Building
 
@@ -50,11 +50,11 @@ npm run build
 npm run dev
 ```
 
-After this, you can use a program like `web-ext` to run or test the extension.
+~~After this, you can use a program like `web-ext` to run or test the extension.~~ You can load the extension unpacked in google chrome after enabling developer mode. Simply point chrome to the dist folder.
 
-### Firefox
+### ~~Firefox~~
 
-If you are going to use this in Firefox, you also need to substitute all references of `chrome` to `browser` in `dist/bundle.js`, for example:
+~~If you are going to use this in Firefox, you also need to substitute all references of `chrome` to `browser` in `dist/bundle.js`, for example:~~
 
 ```shell
 cd dist

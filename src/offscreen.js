@@ -1,5 +1,3 @@
-
-
 const textEl = document.querySelector('#text');
 async function readClipboardAndSend() {
     try {
