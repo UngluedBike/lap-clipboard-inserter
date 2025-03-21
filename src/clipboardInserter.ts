@@ -1,6 +1,6 @@
 export interface ClipboardInserter {
     previousText: string;
-    interval: ReturnType<typeof setInterval> | undefined;
+    //interval: ReturnType<typeof setInterval> | undefined;
 }
 
 export interface Background {

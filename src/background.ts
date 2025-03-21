@@ -26,13 +26,21 @@ chrome.action.onClicked.addListener(() =>
         )
 );
 
+
+chrome.runtime.onMessage.addListener((message) => {
+    console.log("received message from offscreen!");
+    background.listeningTabs.forEach(id => {
+        chrome.tabs.sendMessage(id, message)
+    });
+})
+
 function toggleTab(background: Background, id: number) {
     const index = background.listeningTabs.indexOf(id);
     if (index > -1) {
         background.listeningTabs.splice(index, 1);
         sendMessageToTab(id, "eject" as Request);
         chrome.action.setBadgeText({ tabId: id, text: "" });
-    } else {
+    } else {       
         chrome.scripting
             .executeScript({
                 target: { tabId: id },
@@ -47,5 +55,19 @@ function toggleTab(background: Background, id: number) {
             color: "green",
         });
         chrome.action.setBadgeText({ tabId: id, text: "ON" });
+        ensureOffscreenDocument();
     }
 }
+
+async function ensureOffscreenDocument() {
+    const exists = await chrome.offscreen.hasDocument();
+    console.log('Creating doc')
+    if (!exists) {
+      await chrome.offscreen.createDocument({
+        url: 'offscreen.html',
+        reasons: ['CLIPBOARD'],
+        justification: 'Read clipboard for pasting into page'
+      });
+    }
+    console.log('Doc exists:' + await chrome.offscreen.hasDocument());
+  }

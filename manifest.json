@@ -20,7 +20,9 @@
     "permissions": [
         "activeTab",
         "scripting",
-        "clipboardRead"
+        "clipboardRead",
+        "offscreen",
+        "tabs"
     ],
     "background": {
         "service_worker": "bundle.js"

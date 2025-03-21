@@ -26,6 +26,8 @@ module.exports = {
         {from: './manifest.json', to: '../dist/manifest.json'},
         {from: './LICENSE', to: '../dist/LICENSE'},
         {from: './icons', to: '../dist/icons'},
+        { from: './src/offscreen.html', to: '../dist/offscreen.html' },
+        { from: './src/offscreen.js', to: '../dist/offscreen.js' }
       ],
     }),
   ],
