@@ -1,6 +1,6 @@
 # Lap Clipboard Inserter
 
-A browser extension whose purpose is to repetitively insert the system clipboard's content into a page. This fork works with chrome's offscreen api to allow insertion even when 
+A browser extension whose purpose is to repetitively insert the system clipboard's content into a page. This fork works with chrome's offscreen api to allow insertion even when the window is not active. 
 
 ## Demonstration
 
