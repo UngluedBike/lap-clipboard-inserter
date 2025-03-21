@@ -26,9 +26,10 @@ chrome.action.onClicked.addListener(() =>
         )
 );
 
-
+// We have to listen to the message from the offscreen page
+// and then forward it because the offscreen page can't send messages to tabs
+// and doesnt have a reference to the listening tabs.
 chrome.runtime.onMessage.addListener((message) => {
-    console.log("received message from offscreen!");
     background.listeningTabs.forEach(id => {
         chrome.tabs.sendMessage(id, message)
     });
@@ -61,7 +62,6 @@ function toggleTab(background: Background, id: number) {
 
 async function ensureOffscreenDocument() {
     const exists = await chrome.offscreen.hasDocument();
-    console.log('Creating doc')
     if (!exists) {
       await chrome.offscreen.createDocument({
         url: 'offscreen.html',
@@ -69,5 +69,4 @@ async function ensureOffscreenDocument() {
         justification: 'Read clipboard for pasting into page'
       });
     }
-    console.log('Doc exists:' + await chrome.offscreen.hasDocument());
   }
