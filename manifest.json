@@ -1,6 +1,6 @@
 {
-    "name": "Lap Clipboard Inserter",
-    "description": "A browser extension whose purpose is to repetitively insert the system clipboard's content into a page",
+    "name": "Clipboard Inserter Redux",
+    "description": "A browser extension whose purpose is to repetitively insert the system clipboard's content into a page.",
     "version": "2.0.0",
     "manifest_version": 3,
     "icons": {
@@ -21,8 +21,7 @@
         "activeTab",
         "scripting",
         "clipboardRead",
-        "offscreen",
-        "tabs"
+        "offscreen"
     ],
     "background": {
         "service_worker": "bundle.js"

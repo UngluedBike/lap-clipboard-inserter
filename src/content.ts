@@ -19,13 +19,12 @@ export function contentScript() {
     {
       if (message.type === "clipboardContent") {
         const text = message.text;
-        const textIsTheSame = text !== "" &&
+        const textIsNotTheSame = text !== "" &&
           text !== previousText;
         // Now inject it into a page if needed
         if (
-            textIsTheSame
+            textIsNotTheSame
         ) {
-            console.log('text is' + text)
             previousText = text;
             const pasteTarget = document.createElement("p");
             pasteTarget.textContent = text;
