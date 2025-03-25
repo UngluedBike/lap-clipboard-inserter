@@ -36,7 +36,7 @@ This extension has the following differences from the [original Clipboard Insert
 
 ### Chrome
 
-~~I am currently waiting until this [feature](https://bugs.chromium.org/p/chromium/issues/detail?id=1339382) gets stabilized to push to the Chrome Web Store.~~ Extension has been updated, but I have not looked into pushing it to the web store yet.
+Download here: [Clipboard Inserter Redux](https://chromewebstore.google.com/detail/clipboard-inserter-redux/fhjjmocaopmmngdjmpgibphfchdmpbop)
 
 ## Building
 
